@@ -1,0 +1,48 @@
+Package: soc429Code
+Title: Convenience Functions for NCSU Sociology 429
+Version: 0.0.0.9000
+Authors@R: 
+    person("Jim", "Yocom", , "jeyocom@ncsu.edu", role = c("aut", "cre"))
+Description: Convenience functions for NCSU Sociology 429 as taught by Jim Yocom.
+License: CC0
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+Imports: 
+    boot,
+    car,
+    carData,
+    corrplot,
+    dplyr,
+    Ecdat,
+    fastDummies,
+    forcats,
+    formatR,
+    ggplot2,
+    ggthemes,
+    gmodels,
+    gtsummary,
+    ISLR,
+    kableExtra,
+    knitr,
+    lmtest,
+    magrittr,
+    margins,
+    MASS,
+    ordinal,
+    performance,
+    pROC,
+    questionr,
+    rmdformats,
+    sandwich,
+    scales,
+    segmented,
+    shiny,
+    sjPlot,
+    texreg,
+    tools,
+    vcd,
+    vcdExtra
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
