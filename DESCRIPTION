@@ -9,7 +9,6 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Imports: 
-    boot,
     car,
     carData,
     corrplot,
@@ -28,8 +27,8 @@ Imports:
     lmtest,
     magrittr,
     margins,
+    methods,
     MASS,
-    ordinal,
     performance,
     pROC,
     questionr,
@@ -40,9 +39,12 @@ Imports:
     shiny,
     sjPlot,
     texreg,
+    tidyr,
     tools,
     vcd,
     vcdExtra
 Suggests: 
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    boot,
+    ordinal
 Config/testthat/edition: 3
