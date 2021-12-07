@@ -2,6 +2,7 @@
 
 export(bivTable)
 export(clearAll)
+export(contCompare)
 export(durkheimData)
 export(fisherTeaData)
 export(geomMean)

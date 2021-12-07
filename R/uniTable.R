@@ -3,8 +3,7 @@
 #' Create a table of frequencies, relative frequencies, and odds for a single variable
 #'
 #' @param data A data frame
-#' @param variable A variable
-#' @importFrom magrittr %>%
+#' @param variable A variable without quotes
 #' @examples
 #' library(carData)
 #' uniTable(data = carData::Arrests, variable = employed)
@@ -19,6 +18,5 @@ uniTable <- function(data, variable) {
            Odds = Frequency / (sum(Frequency) - Frequency))
 
 }
-
 
 
