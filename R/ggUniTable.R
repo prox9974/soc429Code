@@ -16,6 +16,11 @@
 
 ggUniTable <- function(ut, type = "proportion", total = 100, failures = 100, success = "") {
 
+  if(type == "odds" & success == "") {
+    print("Please identify the 'success' category to calculate the odds.")
+    return()
+  }
+
   df <- as.data.frame(ut)
   vn <- colnames(df)[1]
   L <- levels(df[, 1])
@@ -42,13 +47,37 @@ ggUniTable <- function(ut, type = "proportion", total = 100, failures = 100, suc
   gdf$seq <- ""
   startno <- 1
 
+  # if(type == "proportion") {
+  #   while(i <= L.length) {
+  #     seq[i] <- round(df$Proportion[i]*total, 0)
+  #     gdf$seq[startno:min(startno + seq[i], total)] <- L[i]
+  #     startno <- min(seq[i] + 1, total)
+  #     i <- i + 1
+  #   }
+  # }
+
   if(type == "proportion") {
-    while(i <= L.length) {
-      seq[i] <- round(df$Proportion[i]*total, 0)
-      gdf$seq[startno:min(startno + seq[i], total)] <- L[i]
-      startno <- min(seq[i] + 1, total)
-      i <- i + 1
-    }
+
+    gdf <- df %>%
+      dplyr::mutate(Frequency = round(Proportion*total, 0)) %>%
+      dplyr::select(-Proportion, -Odds)
+
+
+
+    gdf <- gdf[rep(1:nrow(gdf), gdf[["Frequency"]]), ]
+
+
+    print(gdf)
+
+
+    gdf <- gdf %>%
+      dplyr::select(-Frequency) %>%
+      dplyr::arrange(gdf[1]) %>%
+      dplyr::rename(seq = names(gdf[1]))
+
+    gdf$norm <- sort(runif(nrow(gdf)))
+
+    print(gdf)
   }
   if(type == "odds") {
     seq <- unlist(c(rep(paste0("Failures (",failures,")"), failures),
@@ -67,3 +96,9 @@ ggUniTable <- function(ut, type = "proportion", total = 100, failures = 100, suc
 }
 
 
+# library(car)
+# t <- uniTable(data = Prestige %>% tidyr::drop_na(), variable = type)
+# t
+#
+# ggUniTable(t, success = "wc")
+# ggUniTable(t, success = "wc", type = "odds")

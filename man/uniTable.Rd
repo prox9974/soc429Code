@@ -9,7 +9,7 @@ uniTable(data, variable)
 \arguments{
 \item{data}{A data frame}
 
-\item{variable}{A variable}
+\item{variable}{A variable without quotes}
 }
 \description{
 Create a table of frequencies, relative frequencies, and odds for a single variable
