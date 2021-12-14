@@ -38,9 +38,11 @@ Imports:
 Suggests: 
     testthat (>= 3.0.0),
     boot,
+    gridExtra,
     ordinal,
     ISLR,
     sandwich,
+    lme4,
     lmtest,
     performance,
     texreg,
