@@ -12,7 +12,10 @@ export(gotData)
 export(letMeEatCake)
 export(lorData)
 export(minMax)
+<<<<<<< HEAD
 export(mycisB)
+=======
+>>>>>>> 61577c2610af53458ea7cc5141429569cb7230b5
 export(mycisMean)
 export(mycisVar)
 export(myx)
