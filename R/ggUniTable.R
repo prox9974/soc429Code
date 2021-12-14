@@ -66,10 +66,6 @@ ggUniTable <- function(ut, type = "proportion", total = 100, failures = 100, suc
 
     gdf <- gdf[rep(1:nrow(gdf), gdf[["Frequency"]]), ]
 
-
-    print(gdf)
-
-
     gdf <- gdf %>%
       dplyr::select(-Frequency) %>%
       dplyr::arrange(gdf[1]) %>%
@@ -77,7 +73,6 @@ ggUniTable <- function(ut, type = "proportion", total = 100, failures = 100, suc
 
     gdf$norm <- sort(runif(nrow(gdf)))
 
-    print(gdf)
   }
   if(type == "odds") {
     seq <- unlist(c(rep(paste0("Failures (",failures,")"), failures),
