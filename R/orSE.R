@@ -1,5 +1,5 @@
 # ODDS RATIO STANDARD ERROR -----------------------------------------------
-#' Calculate the standard error for an odds ratio by expontiating the log
+#' Calculate the standard error for an odds ratio by exponentiating the log
 #' @importFrom magrittr %>%
 #' @param model a GLM model with family = "binomial"
 #' @examples

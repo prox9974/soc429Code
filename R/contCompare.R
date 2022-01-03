@@ -11,8 +11,7 @@
 #' @param graphType if a graph will be plotted, print differences or ratios
 #' @examples
 #' library(car)
-#' data(car)
-#' library(magrittr)
+#' library(tidyverse)
 #' contCompare(data = GSSvocab, group = educGroup, outcome = vocab, graph = FALSE)
 #' contCompare(data = GSSvocab, group = educGroup, outcome = vocab, graph = TRUE,
 #' graphType = "diff", compare = TRUE, baseline = "12 yrs")
@@ -110,7 +109,7 @@ contCompare <- function(data, group, outcome, compare = FALSE, baseline = "", FU
           ggplot2::scale_fill_manual(labels = c("Smaller", "Baseline", "Bigger"),
                                      values = c("Smaller" = "red", "Baseline" = "white", "Bigger" = "green")) +
           ggplot2::scale_y_continuous(breaks = scales::pretty_breaks(10)) +
-          ggplot2:: ylab("Relative-Risk Difference") +
+          ggplot2:: ylab("Difference") +
           ggplot2::coord_flip() +
           ggplot2::theme_minimal() +
           ggplot2::theme(legend.position = "none")
@@ -127,7 +126,7 @@ contCompare <- function(data, group, outcome, compare = FALSE, baseline = "", FU
           ggplot2::scale_fill_manual(labels = c("Smaller", "Baseline", "Bigger"),
                                      values = c("Smaller" = "red", "Baseline" = "white", "Bigger" = "green")) +
           ggplot2::scale_y_continuous(breaks = scales::pretty_breaks(10)) +
-          ggplot2:: ylab("Relative-Risk Ratio") +
+          ggplot2:: ylab("Ratio") +
           ggplot2::coord_flip() +
           ggplot2::theme_minimal() +
           ggplot2::theme(legend.position = "none")
