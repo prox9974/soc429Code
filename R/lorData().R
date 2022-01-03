@@ -5,7 +5,7 @@
 #' lorData()
 #' @export
 #'
-#'
+
 lorData <- function() {
   character <- c("Frodo", "Bilbo", "Gollum", "Sauron", "Samwise", "Isildur", "Tom", "Gandalf", "Aragorn", "Arwen", "Legolas", "Boromir", "Gimli", "Smaug")
   ring <- c(rep("No Ring", 7), rep("Ring", 7))
@@ -18,5 +18,3 @@ lorData <- function() {
   return(rings[, -3])
 }
 
-
-lorData()

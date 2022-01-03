@@ -6,6 +6,7 @@
 #' @examples
 #' minMax(M = lm(data = mtcars, mpg ~ wt + I(wt^2)), variable = "wt")
 #' @export
+#'
 
 minMax <- function(M, variable = "") {
   b1 <- attr(terms(M), "term.labels")[1]
