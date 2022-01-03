@@ -27,7 +27,7 @@ contCompare(
 
 \item{baseline}{the omitted/baseline/reference level of x}
 
-\item{FUN}{a function describing an outcome c(mean, median, sd, var, iqr, range)}
+\item{FUN}{a function describing an outcome c(mean, median, sd, var, iqr, quantile, min or max)}
 
 \item{quantile}{a vector to pass to quantile()}
 
@@ -40,8 +40,7 @@ Compare conditional distributions with continuous outcome with optional graph
 }
 \examples{
 library(car)
-data(car)
-library(magrittr)
+library(tidyverse)
 contCompare(data = GSSvocab, group = educGroup, outcome = vocab, graph = FALSE)
 contCompare(data = GSSvocab, group = educGroup, outcome = vocab, graph = TRUE,
 graphType = "diff", compare = TRUE, baseline = "12 yrs")

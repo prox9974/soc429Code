@@ -2,7 +2,7 @@
 % Please edit documentation in R/orSE.R
 \name{orSE}
 \alias{orSE}
-\title{Calculate the standard error for an odds ratio by expontiating the log}
+\title{Calculate the standard error for an odds ratio by exponentiating the log}
 \usage{
 orSE(model)
 }
@@ -10,7 +10,7 @@ orSE(model)
 \item{model}{a GLM model with family = "binomial"}
 }
 \description{
-Calculate the standard error for an odds ratio by expontiating the log
+Calculate the standard error for an odds ratio by exponentiating the log
 }
 \examples{
 m <- glm(data = mtcars, factor(am) ~ mpg + disp, family = "binomial")

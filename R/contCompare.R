@@ -5,7 +5,7 @@
 #' @param outcome your continuous y variable
 #' @param compare do you want to compare conditional outcomes to a baseline level of x TRUE or FALSE
 #' @param baseline the omitted/baseline/reference level of x
-#' @param FUN a function describing an outcome c(mean, median, sd, var, iqr, range)
+#' @param FUN a function describing an outcome c(mean, median, sd, var, iqr, quantile, min or max)
 #' @param quantile a vector to pass to quantile()
 #' @param graph a TRUE/FALSE indicator of whether or not to print a graph
 #' @param graphType if a graph will be plotted, print differences or ratios
@@ -92,10 +92,6 @@ contCompare <- function(data, group, outcome, compare = FALSE, baseline = "", FU
       ggplot2::scale_y_continuous(breaks = scales::pretty_breaks(10)) +
       ggplot2::coord_flip() +
       ggplot2::theme_minimal()
-
-      print(g)
-
-
     }
 
     if(graph == TRUE & compare == TRUE) {

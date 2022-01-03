@@ -7,7 +7,7 @@
 #' @param total Total number of observations (for proportions only)
 #' @param failures Total number of failures (for odds only)
 #' @param success The level of the outcome variable that is a success
-#' @importFrom tidyverse %>%
+#' @importFrom magrittr %>%
 #' @examples
 #' ut <- uniTable(data = carData::Arrests, variable = employed)
 #' ggUniTable(ut = ut, total = 600)

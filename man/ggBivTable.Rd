@@ -4,20 +4,12 @@
 \alias{ggBivTable}
 \title{Graph a table of relative conditional frequencies as odds or proportions}
 \usage{
-ggBivTable(
-  table,
-  type = "proportion",
-  total = 1000,
-  failures = 100,
-  success = ""
-)
+ggBivTable(table, type = "proportion", failures = 100, success = "")
 }
 \arguments{
 \item{table}{bivTable object. Note that this is NOT a data frame}
 
 \item{type}{"proportion" or "odds"}
-
-\item{total}{Total number of observations (for proportions only)}
 
 \item{failures}{Total number of failures (for odds only)}
 
@@ -28,6 +20,6 @@ Graph a table of relative conditional frequencies as odds or proportions
 }
 \examples{
 bt <- bivTable(data = carData::GSSvocab, group = ageGroup, outcome = nativeBorn)
-ggBivTable(table = bt, total = 30)
+ggBivTable(table = bt)
 ggBivTable(table = bt, type = "odds", success = "no", failures = 20)
 }

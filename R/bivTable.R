@@ -41,11 +41,12 @@ bivTable <- function(data, group, outcome, compare = FALSE, baseline = "") {
 
      df <- df %>% dplyr::group_by(!!outcome, !!group) %>%
        dplyr::mutate(order = ifelse(!!group == baseline, 0, 1)) %>%
-         dplyr::ungroup %>% dplyr::group_by(!!outcome) %>%
+         dplyr::ungroup() %>% dplyr::group_by(!!outcome) %>%
          dplyr::arrange(order, .by_group = TRUE) %>%
          dplyr::mutate(RRR = Proportion/Proportion[1],
                 RRD = Proportion - Proportion[1],
-                OR = Odds/Odds[1])
+                OR = Odds/Odds[1]) %>%
+       dplyr::select(-order)
 
   }
 
