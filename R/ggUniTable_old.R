@@ -10,11 +10,11 @@
 #' @importFrom magrittr %>%
 #' @examples
 #' ut <- uniTable(data = carData::Arrests, variable = employed)
-#' ggUniTable(ut = ut, total = 600)
-#' ggUniTable(ut = ut, type = "odds", success = "No", failures = 42)
+#' ggUniTable_old(ut = ut, total = 600)
+#' ggUniTable_old(ut = ut, type = "odds", success = "No", failures = 42)
 #' @export
 
-ggUniTable <- function(ut, type = "proportion", total = 100, failures = 100, success = "") {
+ggUniTable_old <- function(ut, type = "proportion", total = 100, failures = 100, success = "") {
 
   if(type == "odds" & success == "") {
     print("Please identify the 'success' category to calculate the odds.")

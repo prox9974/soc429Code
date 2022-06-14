@@ -2,15 +2,15 @@
 
 #' Graph a table of relative marginal frequencies as odds or proportions
 #'
-#' @param ut uniTable object. Note that this is NOT a data frame
+#' @param t uniTable object. Note that this is NOT a data frame
 #' @param type "proportion" or "odds"
 #' @param failures Total number of failures (for odds only)
 #' @param success The level of the outcome variable that is a success
 #' @importFrom magrittr %>%
 #' @examples
 #' ut <- uniTable(data = carData::Arrests, variable = employed)
-#' ggUniTable(ut = ut)
-#' ggUniTable(ut = ut, type = "odds", success = "No", failures = 10)
+#' ggUniTable(t = ut)
+#' ggUniTable(t = ut, type = "odds", success = "No", failures = 10)
 #' @export
 
 ggUniTable <- function(t, type = "proportion", failures = 100, success = "") {
