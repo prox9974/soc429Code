@@ -34,7 +34,7 @@ ggUniTable <- function(t, type = "proportion", failures = 100, success = "") {
 
     g <- ggplot2::ggplot(data = t) +
       ggplot2::geom_col(ggplot2::aes_string(y = colnames(t)[3], x = 1, fill = colnames(t)[1])) +
-      mytheme() + ggplot2::scale_x_continuous(breaks = scales::pretty_breaks(10)) + ggplot2::coord_flip()
+      mytheme() + ggplot2::scale_y_continuous(breaks = scales::pretty_breaks(10)) + ggplot2::coord_flip()
     print(g)
   }
 
@@ -42,7 +42,7 @@ ggUniTable <- function(t, type = "proportion", failures = 100, success = "") {
 
     g <- ggplot2::ggplot(data = t) +
       ggplot2::geom_col(ggplot2::aes_string(y = colnames(t)[2], x = 1, fill = colnames(t)[1])) +
-      mytheme() + ggplot2::scale_x_continuous(breaks = scales::pretty_breaks(10)) + ggplot2::coord_flip()
+      mytheme() + ggplot2::scale_y_continuous(breaks = scales::pretty_breaks(10)) + ggplot2::coord_flip()
     print(g)
   }
 
@@ -60,7 +60,9 @@ ggUniTable <- function(t, type = "proportion", failures = 100, success = "") {
 
     ggplot2::ggplot(data = df.s) +
       ggplot2::geom_col(ggplot2::aes(y = Outcome, x = 1, fill = Level)) + mytheme() +
-      ggplot2::scale_x_continuous(breaks = scales::pretty_breaks(10)) + ggplot2::coord_flip()
+      ggplot2::scale_y_continuous(breaks = scales::pretty_breaks(10)) + ggplot2::coord_flip() +
+      ggplot2::scale_fill_discrete(labels = c(paste0(stringr::str_to_title(success), " (S)"), paste0("Not ", stringr::str_to_title(success), " (F)"))) +
+      ggplot2::ylab(paste0("Odds (Successes per ", failures, " Failures)"))
 
 
 
